@@ -1,4 +1,33 @@
-This repository contains the complete reproducible pipeline for the paper Adapted Objective Index of Water Pollution: A Transferable ML Approach. The project proposes an adapted Objective Index of Pollution (OIP_adapted) built from commonly available physicochemical and microbiological water-quality parameters, including dissolved oxygen, pH, conductivity, biological oxygen demand, nitrate/nitrite, fecal coliform, and total coliform.
-The pipeline first constructs and validates the adapted index using historical Indian river water-quality observations. It then benchmarks multiple supervised machine learning models to test whether the pollution categories induced by the rule-based index can be recovered from the measured feature space. The selected models are evaluated using stratified cross-validation, held-out test metrics, macro-F1, balanced accuracy, confusion matrices, and feature-importance analysis.
-A second part of the project evaluates cross-domain transferability by applying the India-trained representation to a harmonized Mexican water-quality dataset from RENAMECA. The notebook includes preprocessing, schema harmonization, censored-value handling, adapted OIP scoring for Mexico, India-to-Mexico transfer classification, continuous surrogate modeling, and basin-level analysis across selected Mexican river basin systems.
-The main goal of the repository is to provide a transparent and reproducible workflow for studying when machine learning models trained in one environmental monitoring context can transfer to another. The results show that transfer performance depends strongly on feature-space similarity between domains, rather than only on geographic or intuitive environmental similarity. The project also documents important limitations, including class coverage gaps, such as the absence of Very High pollution examples in the Indian training data, and the lack of consistently harmonized seasonal, rainfall, or streamflow variables.
+# Adapted Objective Index of Water Pollution: A Transferable ML Approach
+
+This repository contains the complete reproducible notebook for the paper **“Adapted Objective Index of Water Pollution: A Transferable ML Approach.”**
+
+The project proposes an adapted Objective Index of Pollution (`OIP_adapted`) for water-quality assessment using commonly available physicochemical and microbiological parameters. The framework is first constructed and validated using Indian river water-quality observations, and then transferred to a harmonized Mexican water-quality dataset from CONAGUA’s RENAMECA monitoring network.
+
+## Overview
+
+The main goal of this project is to evaluate whether an interpretable rule-based pollution index can be combined with machine learning to support cross-domain water-quality assessment.
+
+The pipeline includes:
+
+- Construction of an adapted Objective Index of Pollution (`OIP_adapted`)
+- Cleaning and preprocessing of real-world water-quality data
+- Classification of water pollution levels into severity categories
+- Benchmarking of multiple supervised machine learning models
+- Hyperparameter tuning of selected classifiers
+- Continuous surrogate modeling using Random Forest regression
+- Harmonization of Mexican RENAMECA data into the Indian feature schema
+- India-to-Mexico transfer evaluation
+- Basin-level transfer analysis for selected Mexican river systems
+- Generation of descriptive tables, metrics, and figures used in the paper
+
+## Repository Structure
+
+```text
+.
+├── River-Pollution_ML-Project_EntregaFinal_with_Table2.ipynb
+├── data/
+│   └── raw/
+│       ├── water_dataX.csv
+│       └── renameca-lotico.xlsx
+└── README.md
