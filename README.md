@@ -25,7 +25,7 @@ The pipeline includes:
 
 ```text
 .
-├── River-Pollution_ML-Project_EntregaFinal_with_Table2.ipynb
+├── River-Pollution_ML.ipynb
 ├── data/
 │   └── raw/
 │       ├── water_dataX.csv
